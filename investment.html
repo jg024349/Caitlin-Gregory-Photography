@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photography Investment | Caitlin Gregory Photography</title>
+  <meta name="description" content="View session investment details for family, senior, maternity, and newborn photography sessions in Greensboro, NC." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo"><img src="CAITLIN GREGORY_WhiteLogo.png" alt="Caitlin Gregory Photography" /></a>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <a href="family.html" class="dropdown-toggle">Gallery</a>
+      <div class="dropdown-menu">
+        <a href="family.html">Family</a>
+        <a href="senior.html">Senior Portrait</a>
+        <a href="maternity.html">Maternity</a>
+        <a href="newborn.html">Newborn</a>
+        <a href="all-four-seasons.html">All Four Seasons</a>
+      </div>
+    </div>
+
+    <a href="investment.html">Investment</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="testimonials.html">Testimonials</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- INVESTMENT HERO -->
+  <section class="investment-hero">
+    <div class="investment-hero-content">
+      <p class="eyebrow">Investment Details</p>
+      <h1>Thoughtfully created. Meaningfully preserved.</h1>
+      <p>
+        Your portrait experience is more than a photo session—it's a chance to pause, connect, & preserve this season of life with intention. Each collection is thoughtfully designed to reflect the care, creativity, & experience you receive from start to finish.
+      </p>
+    </div>
+  </section>
+
+  <!-- COLLECTION FILTER -->
+  <div class="collection-filter">
+    <button class="filter-btn active" onclick="filterCollections('all')">All Collections</button>
+    <button class="filter-btn" onclick="filterCollections('family')">Family</button>
+    <button class="filter-btn" onclick="filterCollections('maternity')">Maternity & Baby</button>
+    <button class="filter-btn" onclick="filterCollections('senior')">Senior</button>
+  </div>
+
+  <!-- COLLECTIONS -->
+  <section class="collections-section">
+
+    <!-- FAMILY COLLECTIONS -->
+    <div class="collection-type" id="family" data-type="family">
+      <h2 class="section-title">Family Collections</h2>
+
+      <!-- The Ruby -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Ruby</h3>
+          <p class="collection-tagline">A beautiful beginning for your family portrait experience, preserving this season simply & sweetly.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>Thoughtfully guided portrait session up to 1 hour</li>
+            <li>Curated gallery of 40+ hand-edited images</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>Access to heirloom-quality artwork and albums</li>
+          </ul>
+          
+          <p class="investment-amount">Collection Investment of <strong>$500</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="family-ruby.jpg" alt="The Ruby - Family Collection" />
+        </div>
+      </article>
+
+      <!-- The Emerald -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Emerald</h3>
+          <p class="collection-tagline">A deeper, more immersive portrait experience for families who desire more variety, extra session time, & a beautiful print for display.</p>
+          
+          <p class="subcollection-note"><strong>The Ruby Collection plus:</strong></p>
+          <ul class="features-list">
+            <li>Extended session length for wardrobe changes</li>
+            <li>Curated gallery of 50+ hand-edited images</li>
+            <li>One 11x14 Fine Art Print</li>
+          </ul>
+          
+          <p class="investment-amount">Collection Investment of <strong>$800</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="family-emerald.jpg" alt="The Emerald - Family Collection" />
+        </div>
+      </article>
+
+      <!-- The Diamond -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Diamond</h3>
+          <p class="collection-tagline">The most elevated, heirloom-focused experience for families who cherish tangible keepsakes, wishing to create an heirloom to pass down for generations.</p>
+          
+          <p class="subcollection-note"><strong>The Ruby Collection plus:</strong></p>
+          <ul class="features-list">
+            <li>Extended portrait session with priority scheduling & editing</li>
+            <li>Curated gallery of 60+ hand-edited images</li>
+            <li>One 16x20 Fine Art Print</li>
+            <li>An 8x10 heirloom album with 10 spreads showcasing your favorite photographs</li>
+          </ul>
+          
+          <p class="investment-amount">Collection Investment of <strong>$1,200</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="family-diamond.jpg" alt="The Diamond - Family Collection" />
+        </div>
+      </article>
+    </div>
+
+    <!-- MATERNITY & BABY COLLECTIONS -->
+    <div class="collection-type" id="maternity" data-type="maternity" style="display: none;">
+      <h2 class="section-title">Maternity & Baby Collections</h2>
+
+      <!-- The Maternity -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Maternity</h3>
+          <p class="collection-tagline">A gentle, intentional session honoring this season of anticipation with images that feel natural, timeless, and deeply personal.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>Thoughtfully guided session up to 1 hour</li>
+            <li>Curated gallery of 30+ hand-edited images</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>Two 8x10 Fine Art Prints</li>
+            <li>Outfit changes as desired within session time</li>
+          </ul>
+          
+          <p class="investment-amount">Collection Investment of <strong>$450</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="maternity-maternity.jpg" alt="The Maternity - Maternity Collection" />
+        </div>
+      </article>
+
+      <!-- The Newborn -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Newborn</h3>
+          <p class="collection-tagline">A relaxed, baby-led session designed with comfort, connection, & flexibility in mind preserving the earliest days of your newest family member's life.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>Up to 2-hour in-home newborn session</li>
+            <li>Option to include family throughout the session</li>
+            <li>Curated gallery of 30+ hand-edited images</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>One 16x20 or Two 8x10 Fine Art Prints</li>
+            <li>Outfit changes as needed within session time</li>
+            <li>Baby Bit Panels & Additional Artwork Available</li>
+          </ul>
+          
+          <p class="investment-amount">Collection Investment of <strong>$600</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="maternity-newborn.jpg" alt="The Newborn - Baby Collection" />
+        </div>
+      </article>
+
+      <!-- The Bundle -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Bundle</h3>
+          <p class="collection-tagline">A thoughtfully paired experience for families who desire a seamless beginning, documenting both the anticipation & the arrival of your newest one.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>1-hour maternity session</li>
+            <li>2-hour newborn session</li>
+            <li>Curated galleries of 30+ hand-edited images from each session</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>Two 16x20 or Four 8x10 Fine Art Prints</li>
+            <li>Outfit changes as desired</li>
+            <li>Baby Bit Panels & Additional Artwork Available</li>
+          </ul>
+          
+          <p class="investment-note">*If planning two 2 days, additional fee may apply</p>
+          <p class="investment-amount">Collection Investment of <strong>$950</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="maternity-bundle.jpg" alt="The Bundle - Maternity & Newborn" />
+        </div>
+      </article>
+
+      <!-- Baby's First Year -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>Baby's First Year</h3>
+          <p class="collection-tagline">A year-long portrait experience documenting every beautiful milestone, creating a beautiful legacy to grow with your family.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>Maternity, Newborn, 3-month, 6-month, 9-month, & 12-month sessions</li>
+            <li>Up to 1-hour sessions (newborn up to 2 hours)</li>
+            <li>Curated gallery of 30+ hand-edited images per session</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>One 16x20 or Two 8x10 Fine Art Prints Per Session</li>
+            <li>Linen-bound 6x9 heirloom album</li>
+            <li>*Year Session Highlights: Your final session is extended to allow for family portraits & a cake smash, creating a joyful, meaningful conclusion to your baby's first year.</li>
+          </ul>
+          
+          <p class="investment-note">*If planning two 2 days, additional fee may apply</p>
+          <p class="investment-amount">Collection Investment of <strong>$2,900</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="maternity-first-year.jpg" alt="Baby's First Year - Year-Long Collection" />
+        </div>
+      </article>
+    </div>
+
+    <!-- SENIOR COLLECTIONS -->
+    <div class="collection-type" id="senior" data-type="senior" style="display: none;">
+      <h2 class="section-title">Senior Collections</h2>
+
+      <!-- The Sapphire -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Sapphire</h3>
+          <p class="collection-tagline">Perfect for capturing this special year with style & ease.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>Thoughtfully guided session up to 1 hour</li>
+            <li>40+ high-resolution digital images</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>One 16x20 or Two 8x10 Professional Portraits</li>
+            <li>Flexible outfit changes throughout the season</li>
+          </ul>
+          
+          <p class="investment-amount">Collection Investment of <strong>$450</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="senior-sapphire.jpg" alt="The Sapphire - Senior Collection" />
+        </div>
+      </article>
+
+      <!-- The Onyx -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Onyx</h3>
+          <p class="collection-tagline">Designed for seniors who want variety in locations & outfits, plus a bespoke album to remember the year.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>2-hour session</li>
+            <li>60+ high-resolution digital images</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>One 16x20 or Two 8x10 Professional Prints</li>
+            <li>8x10 Linen 5 Spread / 10 Page Signature Book with favorite 10 portraits (additional pages available)</li>
+            <li>Flexible outfit changes throughout the season</li>
+            <li>Two locations within the session time (option to include your school or sports field with approval)</li>
+            <li>Athletic Shots Incorporated</li>
+          </ul>
+          
+          <p class="investment-amount">Collection Investment of <strong>$850</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="senior-onyx.jpg" alt="The Onyx - Senior Collection" />
+        </div>
+      </article>
+
+      <!-- The Crown -->
+      <article class="collection-card">
+        <div class="card-content">
+          <h3>The Crown</h3>
+          <p class="collection-tagline">The ultimate storytelling experience for seniors who want multiple styles, meaningful locations, and a luxury heirloom album to celebrate this milestone year.</p>
+          
+          <p class="subcollection-note"><strong>Includes:</strong></p>
+          <ul class="features-list">
+            <li>3-hour full session</li>
+            <li>70+ high-resolution digital images</li>
+            <li>Online gallery with printing rights & optional professional prints</li>
+            <li>One 16x20 or Two 8x10 Professional Prints</li>
+            <li>8x10 Linen 10 Spread / 20 Page Signature Album with favorite portraits</li>
+            <li>Flexible outfit changes throughout the season</li>
+            <li>Three locations within the session time (option to include your school or sports field with approval)</li>
+            <li>Athletic & Creative Shots Incorporated</li>
+            <li>Priority editing - full gallery delivered in 2 weeks</li>
+            <li>Pre-Session Style + Location Planning Call</li>
+          </ul>
+          
+          <p class="investment-note">*If planning two 2 days, additional fee may apply</p>
+          <p class="investment-amount">Collection Investment of <strong>$1,200</strong></p>
+          <a href="contact.html" class="button">Inquire About This Package</a>
+        </div>
+        <div class="card-image">
+          <img src="senior-crown.jpg" alt="The Crown - Senior Collection" />
+        </div>
+      </article>
+    </div>
+
+  </section>
+
+  <!-- PROCESS SECTION -->
+  <section class="investment-process">
+    <div class="process-container">
+      <h2>How to Get Started</h2>
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h3>Explore</h3>
+          <p>Browse our collections and find the perfect fit for your session.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h3>Connect</h3>
+          <p>Reach out through our contact form or email to discuss your vision.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h3>Plan</h3>
+          <p>We'll schedule your session and plan all the special details together.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">4</span>
+          <h3>Celebrate</h3>
+          <p>Your session happens, and then we deliver your beautiful images.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED SECTION -->
+  <section class="investment-included">
+    <h2>What's Included in Every Collection</h2>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="icon">📸</div>
+        <h3>Professional Photography</h3>
+        <p>Thoughtfully guided sessions designed to capture authentic moments that feel like you.</p>
+      </div>
+      <div class="included-item">
+        <div class="icon">🎨</div>
+        <h3>Expert Editing</h3>
+        <p>Hand-edited images that are beautifully processed with attention to detail and artistry.</p>
+      </div>
+      <div class="included-item">
+        <div class="icon">💾</div>
+        <h3>Online Gallery</h3>
+        <p>A secure, password-protected gallery to view and order prints whenever you'd like.</p>
+      </div>
+      <div class="included-item">
+        <div class="icon">🖼️</div>
+        <h3>Heirloom Products</h3>
+        <p>Access to fine art prints, albums, and products designed to last for generations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="investment-cta">
+    <p class="eyebrow">Ready to invest in memories?</p>
+    <h2>Let's create images that feel like home.</h2>
+    <p>Reach out to discuss which collection is the perfect fit for your family. You'll hear back within 24 hours.</p>
+    <a href="contact.html" class="button">Inquire Here</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Caitlin Gregory Photography, L.L.C.</p>
+  <p>caitlin.gregory@caitlingregoryphotography.com</p>
+  <p>© 2025 Caitlin Gregory Photography</p>
+</footer>
+
+<script>
+  function filterCollections(type) {
+    // Hide all collections
+    document.querySelectorAll('.collection-type').forEach(el => {
+      el.style.display = 'none';
+    });
+
+    // Remove active class from all buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    // Show selected collection type
+    if (type === 'all') {
+      document.querySelectorAll('.collection-type').forEach(el => {
+        el.style.display = 'block';
+      });
+    } else {
+      document.getElementById(type).style.display = 'block';
+    }
+
+    // Add active class to clicked button
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
