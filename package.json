@@ -1,0 +1,10 @@
+{
+  "name": "caitlin-gregory-photography-website",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
