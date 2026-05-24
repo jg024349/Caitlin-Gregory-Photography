@@ -1365,14 +1365,18 @@ button:disabled {
 }
 
 .season-gallery {
-  max-width: 1000px;
+  max-width: 1320px;
   margin: auto;
   padding: clamp(15px, 4vw, 20px);
 }
 
 .season-gallery h2 {
-  font-size: clamp(22px, 4vw, 36px);
-  margin: clamp(30px, 6vw, 50px) 0 clamp(20px, 4vw, 30px) 0;
+  font-size: clamp(34px, 5vw, 54px);
+  margin: clamp(30px, 6vw, 50px) 0 clamp(25px, 4vw, 38px) 0;
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+  letter-spacing: 2px;
 }
 
 .gallery-grid {
@@ -1393,6 +1397,82 @@ button:disabled {
 
 .gallery-grid-wide {
   grid-template-columns: 1fr;
+}
+
+.season-carousel {
+  position: relative;
+  margin-bottom: clamp(45px, 8vw, 70px);
+}
+
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: transparent;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: clamp(42px, 5vw, 58px);
+  height: clamp(42px, 5vw, 58px);
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.25s ease;
+}
+
+.carousel-arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.carousel-arrow-prev {
+  left: 18px;
+}
+
+.carousel-arrow-prev::before {
+  transform: translate(-35%, -50%) rotate(-135deg);
+}
+
+.carousel-arrow-next {
+  right: 18px;
+}
+
+.carousel-arrow-next::before {
+  transform: translate(-65%, -50%) rotate(45deg);
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.carousel-dots {
+  display: none;
 }
 
 .intro,
@@ -1734,6 +1814,10 @@ button:disabled {
     height: clamp(180px, 60vw, 350px);
   }
 
+  .carousel-slide:nth-child(3) {
+    display: none;
+  }
+
   .hero-card {
     left: clamp(12px, 4vw, 8vw);
     bottom: clamp(15px, 6vw, 60px);
@@ -1969,6 +2053,11 @@ button:disabled {
 
   .service-card-content {
     padding: 28px;
+  }
+
+  .carousel-slide:nth-child(2),
+  .carousel-slide:nth-child(3) {
+    display: none;
   }
 
   .about-hero {

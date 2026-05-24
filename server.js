@@ -50,7 +50,7 @@ const contentTypes = {
   ".svg": "image/svg+xml"
 };
 
-const allowedScripts = new Set(["footer.js", "contact-form.js"]);
+const allowedScripts = new Set(["footer.js", "contact-form.js", "family-gallery.js"]);
 
 function sendJson(response, statusCode, body) {
   response.writeHead(statusCode, {

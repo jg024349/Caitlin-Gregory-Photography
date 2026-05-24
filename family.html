@@ -44,10 +44,37 @@
 
   <section class="season-gallery">
     <h2>Spring</h2>
-    <div class="gallery-grid gallery-grid-offset">
-      <img src="family-spring-1.jpg" alt="Spring family photography session">
-      <img src="family-spring-2.jpg" alt="Spring family portrait">
-      <img src="family-spring-3.jpg" alt="Spring family gallery image">
+    <div class="season-carousel" data-season-carousel aria-label="Spring family gallery">
+      <button class="carousel-arrow carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous spring image"></button>
+
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="Family-Spring/Spring1.jpg" alt="Spring family gallery image 1" data-carousel-image="0" />
+        </div>
+        <div class="carousel-slide">
+          <img src="Family-Spring/Spring2.jpg" alt="Spring family gallery image 2" data-carousel-image="1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="Family-Spring/Spring3.jpg" alt="Spring family gallery image 3" data-carousel-image="2" />
+        </div>
+      </div>
+
+      <button class="carousel-arrow carousel-arrow-next" type="button" data-carousel-next aria-label="Next spring image"></button>
+
+      <div class="carousel-dots" aria-label="Spring gallery slide picker">
+        <button type="button" class="active" data-carousel-dot="0" aria-label="Show spring image 1"></button>
+        <button type="button" data-carousel-dot="1" aria-label="Show spring image 2"></button>
+        <button type="button" data-carousel-dot="2" aria-label="Show spring image 3"></button>
+        <button type="button" data-carousel-dot="3" aria-label="Show spring image 4"></button>
+        <button type="button" data-carousel-dot="4" aria-label="Show spring image 5"></button>
+        <button type="button" data-carousel-dot="5" aria-label="Show spring image 6"></button>
+        <button type="button" data-carousel-dot="6" aria-label="Show spring image 7"></button>
+        <button type="button" data-carousel-dot="7" aria-label="Show spring image 8"></button>
+        <button type="button" data-carousel-dot="8" aria-label="Show spring image 9"></button>
+        <button type="button" data-carousel-dot="9" aria-label="Show spring image 10"></button>
+        <button type="button" data-carousel-dot="10" aria-label="Show spring image 11"></button>
+        <button type="button" data-carousel-dot="11" aria-label="Show spring image 12"></button>
+      </div>
     </div>
 
     <h2>Summer</h2>
@@ -128,6 +155,7 @@
 
 <div data-site-footer></div>
 <script src="footer.js"></script>
+<script src="family-gallery.js"></script>
 
 </body>
 </html>
