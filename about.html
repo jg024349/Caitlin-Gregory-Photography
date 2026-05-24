@@ -106,7 +106,9 @@
       <p>You will hear back from me within 24 hours.</p>
     </div>
 
-    <form class="about-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form class="about-form" action="/api/contact" method="POST" data-contact-form>
+      <input type="text" name="website" autocomplete="off" tabindex="-1" class="form-honeypot" aria-hidden="true" />
+      <input type="hidden" name="source" value="About page" />
       <div class="form-group">
         <label for="name">Full Name *</label>
         <input type="text" id="name" name="name" placeholder="First & Last Name" required />
@@ -151,6 +153,7 @@
       </div>
 
       <button type="submit" class="button button-large">Send</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
 
       <p class="form-disclaimer">
         This form is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
@@ -181,6 +184,7 @@
 
 <div data-site-footer></div>
 <script src="footer.js"></script>
+<script src="contact-form.js"></script>
 
 </body>
 </html>

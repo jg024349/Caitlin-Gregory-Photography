@@ -14,6 +14,10 @@ body {
   background: #f7f2ec;
 }
 
+:root {
+  --brand-blue: #b8c6dc;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -26,7 +30,7 @@ button {
 /* HEADER */
 .site-header {
   padding: 20px 4vw;
-  background: #b8c6dc;
+  background: var(--brand-blue);
   text-align: center;
   position: sticky;
   top: 0;
@@ -131,12 +135,12 @@ p {
 }
 
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 2px;
+  font-size: clamp(13px, 1.35vw, 16px);
+  letter-spacing: 2.8px;
   text-transform: uppercase;
   color: #9b765f;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 /* BUTTONS */
@@ -213,10 +217,10 @@ p {
 
 /* CONTACT HERO */
 .contact-hero {
-  padding: clamp(60px, 12vw, 100px) 6vw;
+  padding: clamp(42px, 8vw, 70px) 6vw clamp(20px, 5vw, 34px);
   text-align: center;
-  background: linear-gradient(135deg, #b8c6dc 0%, #a0b3d1 100%);
-  color: white;
+  background: #f7f2ec;
+  color: #2d2925;
 }
 
 .contact-hero-content {
@@ -225,8 +229,9 @@ p {
 }
 
 .contact-hero-content h1 {
-  color: white;
-  margin-bottom: 20px;
+  color: #2d2925;
+  margin-bottom: 0;
+  font-size: clamp(30px, 5vw, 48px);
 }
 
 .contact-hero-content .eyebrow {
@@ -242,22 +247,21 @@ p {
 
 /* CONTACT SECTION */
 .contact-section {
-  padding: clamp(60px, 10vw, 100px) clamp(20px, 4vw, 24px);
+  padding: 0 clamp(20px, 4vw, 24px) clamp(60px, 10vw, 100px);
   background: #f7f2ec;
 }
 
 .contact-container {
-  max-width: 1200px;
+  max-width: 960px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(30px, 8vw, 50px);
-  align-items: flex-start;
+  display: block;
 }
 
 .contact-image {
   position: relative;
   overflow: hidden;
+  max-width: 760px;
+  margin: 0 auto clamp(24px, 5vw, 42px);
 }
 
 .contact-image img {
@@ -270,24 +274,34 @@ p {
 .contact-form-wrapper {
   display: flex;
   flex-direction: column;
-  gap: clamp(30px, 5vw, 50px);
+  gap: clamp(36px, 6vw, 60px);
 }
 
 .contact-intro h2 {
-  font-size: clamp(24px, 5vw, 36px);
-  margin-bottom: 20px;
+  max-width: 780px;
+  margin: 0 auto clamp(34px, 6vw, 50px);
+  text-align: center;
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: normal;
+  letter-spacing: 5px;
+  line-height: 1.45;
 }
 
 .contact-info-block {
-  background: white;
-  padding: clamp(20px, 5vw, 30px);
-  border-left: 4px solid #9b765f;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(36px, 6vw, 56px) clamp(10px, 4vw, 20px);
+  background: transparent;
+  border-top: 1px solid rgba(45, 41, 37, 0.22);
+  border-bottom: 1px solid rgba(45, 41, 37, 0.22);
+  text-align: center;
 }
 
 .contact-info-block p {
   font-size: clamp(14px, 2vw, 16px);
-  line-height: 1.8;
-  margin: 0 0 15px 0;
+  line-height: 1.9;
+  margin: 0 auto 18px;
+  max-width: 720px;
 }
 
 .contact-info-block p:last-child {
@@ -301,6 +315,9 @@ p {
 
 /* FORM STYLES */
 .contact-form {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
   background: white;
   padding: clamp(30px, 5vw, 40px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -403,6 +420,37 @@ p {
 
 .form-disclaimer a:hover {
   color: #2d2925;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-status {
+  min-height: 24px;
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+.form-status-pending {
+  color: #666;
+}
+
+.form-status-success {
+  color: #3f6f4f;
+}
+
+.form-status-error {
+  color: #9b3f3f;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 
 /* CREDENTIALS SECTION */
@@ -1048,15 +1096,15 @@ p {
 
 /* PROCESS SECTION */
 .investment-process {
-  background: #2d2925;
-  color: white;
+  background: var(--brand-blue);
+  color: #2d2925;
   padding: clamp(50px, 10vw, 80px) 6vw;
 }
 
 .process-container h2 {
   text-align: center;
   margin-bottom: clamp(40px, 8vw, 60px);
-  color: white;
+  color: #2d2925;
 }
 
 .process-steps {
@@ -1073,20 +1121,20 @@ p {
   display: block;
   font-size: clamp(36px, 8vw, 48px);
   font-weight: bold;
-  color: #9b765f;
+  color: white;
   margin-bottom: 12px;
   line-height: 1;
 }
 
 .step h3 {
-  color: white;
+  color: #2d2925;
   margin-bottom: 12px;
 }
 
 .step p {
   font-size: clamp(14px, 2vw, 16px);
   line-height: 1.6;
-  color: #ccc;
+  color: #3f3933;
 }
 
 /* WHAT'S INCLUDED */
@@ -1103,13 +1151,14 @@ p {
 .included-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: clamp(20px, 5vw, 30px);
+  gap: 1px;
+  background: rgba(45, 41, 37, 0.16);
 }
 
 .included-item {
-  text-align: center;
-  padding: clamp(20px, 5vw, 30px);
-  background: white;
+  text-align: left;
+  padding: clamp(28px, 5vw, 42px);
+  background: #fbfaf7;
   border-radius: 0;
   transition: all 0.3s ease;
 }
@@ -1124,20 +1173,13 @@ p {
   }
 }
 
-.included-item .icon {
-  font-size: clamp(36px, 8vw, 48px);
-  display: block;
-  margin-bottom: 12px;
-  line-height: 1;
-}
-
 .included-item h3 {
-  font-size: clamp(18px, 4vw, 20px);
-  margin-bottom: 10px;
+  font-size: clamp(22px, 3vw, 28px);
+  margin-bottom: 14px;
 }
 
 .included-item p {
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: clamp(15px, 2vw, 17px);
   color: #666;
 }
 
@@ -1167,7 +1209,7 @@ p {
 /* FOOTER */
 .brand-footer {
   padding: clamp(30px, 5vw, 44px) 6vw clamp(46px, 7vw, 76px);
-  background: #b8c6dc;
+  background: var(--brand-blue);
   text-align: center;
   color: #111;
 }
@@ -1336,27 +1378,85 @@ p {
 
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1px;
-  background: #d8cbbd;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: #2d2925;
 }
 
 .service-card {
-  padding: clamp(20px, 5vw, 30px);
-  background: #fbfaf7;
-  transition: all 0.3s ease;
+  position: relative;
+  min-height: clamp(360px, 34vw, 520px);
+  overflow: hidden;
+  isolation: isolate;
   cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  color: white;
 }
 
-.service-card:hover {
-  background: #efe6dc;
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(45, 41, 37, 0.08) 0%, rgba(45, 41, 37, 0.78) 100%);
+  transition: background 0.35s ease;
+}
+
+.service-card img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card-content {
+  width: 100%;
+  padding: clamp(24px, 4vw, 38px);
+  transform: translateY(8px);
+  transition: transform 0.35s ease;
+}
+
+.service-card h3 {
+  font-size: clamp(25px, 3vw, 38px);
+  margin-bottom: 12px;
+  color: white;
+}
+
+.service-card p:not(.eyebrow) {
+  max-width: 320px;
+  font-size: clamp(15px, 1.8vw, 17px);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.service-card .eyebrow {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .service-card span {
-  display: block;
-  font-size: clamp(24px, 5vw, 32px);
-  margin-bottom: 10px;
-  font-weight: bold;
+  display: inline-block;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.service-card:hover::after {
+  background: linear-gradient(180deg, rgba(45, 41, 37, 0.12) 0%, rgba(45, 41, 37, 0.88) 100%);
+}
+
+.service-card:hover img {
+  transform: scale(1.06);
+}
+
+.service-card:hover .service-card-content {
+  transform: translateY(0);
 }
 
 .split-section {
@@ -1364,8 +1464,8 @@ p {
   grid-template-columns: 1fr 1fr;
   gap: clamp(30px, 8vw, 60px);
   padding: clamp(50px, 10vw, 100px) 6vw;
-  background: #2d2925;
-  color: white;
+  background: var(--brand-blue);
+  color: #2d2925;
 }
 
 .split-section > div {
@@ -1384,8 +1484,8 @@ p {
 }
 
 .text-link:hover {
-  color: white;
-  border-bottom-color: white;
+  color: #2d2925;
+  border-bottom-color: #2d2925;
 }
 
 /* HERO SECTION (HOME PAGE) */
@@ -1535,6 +1635,10 @@ p {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .service-card {
+    min-height: 420px;
+  }
+
   .credentials-container {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1649,8 +1753,8 @@ p {
   }
 
   .eyebrow {
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 
   .investment-hero {
@@ -1795,6 +1899,18 @@ p {
 
   .contact-cta h2 {
     font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 360px;
+  }
+
+  .service-card-content {
+    padding: 28px;
   }
 
   .about-hero {

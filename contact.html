@@ -39,9 +39,7 @@
   <!-- HERO SECTION -->
   <section class="contact-hero">
     <div class="contact-hero-content">
-      <p class="eyebrow">Let's Connect</p>
-      <h1>Hi Beautiful— You Are in the Right Place!</h1>
-      <p>Ready to book your session? I can't wait to meet you!</p>
+      <h1>Hi Beautiful- You Are in the Right Place!</h1>
     </div>
   </section>
 
@@ -59,13 +57,9 @@
         
         <!-- INTRO TEXT -->
         <div class="contact-intro">
-          <h2>Ready to book your session? I can't wait to meet you!</h2>
+          <h2>Looking for a personable &amp; relaxing Greensboro Family or Senior Portrait Photographer?</h2>
           
           <div class="contact-info-block">
-            <p class="eyebrow">Your Story Matters</p>
-            <p>
-              Looking for a personable & relaxing Greensboro Family or Senior Portrait Photographer?
-            </p>
             <p>
               At the heart of my work is the belief that every season of life deserves to be remembered in a meaningful, lasting way. Based in Greensboro, I specialize in family and senior photography, serving families in Summerfield, Oak Ridge, and the surrounding triad communities. With a thoughtful eye for detail and a love for honest storytelling, I create photographs that feel <em>natural, emotionally rich, and true to you.</em>
             </p>
@@ -81,7 +75,9 @@
         <!-- BOOKING FORM -->
         <div class="contact-form">
           <h3>Let's Get Started</h3>
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form action="/api/contact" method="POST" data-contact-form>
+            <input type="text" name="website" autocomplete="off" tabindex="-1" class="form-honeypot" aria-hidden="true" />
+            <input type="hidden" name="source" value="Contact page" />
             
             <div class="form-group">
               <label for="name">Full Name *</label>
@@ -160,6 +156,7 @@
             </div>
 
             <button type="submit" class="button button-large">Let's Book!</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
             
             <p class="form-note">
               Coming ASAP to make booking easy with our online galleries! For now, simply fill out this form. Message and/or data rates may apply.
@@ -203,6 +200,7 @@
 
 <div data-site-footer></div>
 <script src="footer.js"></script>
+<script src="contact-form.js"></script>
 
 </body>
 </html>

@@ -32,6 +32,8 @@ const port = Number(process.env.PORT || 3000);
 const instagramAccessToken = process.env.INSTAGRAM_ACCESS_TOKEN;
 const instagramCacheMilliseconds = Number(process.env.INSTAGRAM_CACHE_MINUTES || 15) * 60 * 1000;
 const instagramFields = "caption,media_type,media_url,permalink,thumbnail_url,timestamp";
+const formspreeEndpoint = process.env.FORMSPREE_ENDPOINT;
+const contactFormSubject = process.env.CONTACT_FORM_SUBJECT || "New Caitlin Gregory Photography inquiry";
 
 let instagramCache = {
   expiresAt: 0,
@@ -47,6 +49,8 @@ const contentTypes = {
   ".png": "image/png",
   ".svg": "image/svg+xml"
 };
+
+const allowedScripts = new Set(["footer.js", "contact-form.js"]);
 
 function sendJson(response, statusCode, body) {
   response.writeHead(statusCode, {
@@ -101,6 +105,105 @@ async function getInstagramFeed() {
   return instagramCache.payload;
 }
 
+async function readJsonBody(request) {
+  return new Promise(function (resolve, reject) {
+    let body = "";
+
+    request.on("data", function (chunk) {
+      body += chunk;
+
+      if (body.length > 100000) {
+        reject(new Error("Request body is too large."));
+        request.destroy();
+      }
+    });
+
+    request.on("end", function () {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (error) {
+        reject(new Error("Invalid JSON request body."));
+      }
+    });
+
+    request.on("error", reject);
+  });
+}
+
+function requireField(payload, fieldName) {
+  return typeof payload[fieldName] === "string" && payload[fieldName].trim().length > 0;
+}
+
+async function submitContactForm(request, response) {
+  if (request.method !== "POST") {
+    sendJson(response, 405, { error: "Method not allowed." });
+    return;
+  }
+
+  if (!formspreeEndpoint || formspreeEndpoint.includes("YOUR_FORM_ID")) {
+    sendJson(response, 503, { error: "The contact form is not configured yet." });
+    return;
+  }
+
+  let payload;
+  try {
+    payload = await readJsonBody(request);
+  } catch (error) {
+    sendJson(response, 400, { error: error.message });
+    return;
+  }
+
+  if (payload.website) {
+    sendJson(response, 200, { ok: true });
+    return;
+  }
+
+  const requiredFields = ["name", "email", "phone", "session-type"];
+  const missingFields = requiredFields.filter(function (fieldName) {
+    return !requireField(payload, fieldName);
+  });
+
+  if (missingFields.length) {
+    sendJson(response, 400, { error: "Please complete all required fields." });
+    return;
+  }
+
+  const formspreePayload = {
+    _subject: contactFormSubject,
+    name: payload.name.trim(),
+    email: payload.email.trim(),
+    phone: payload.phone.trim(),
+    "session-type": payload["session-type"].trim(),
+    date: payload.date || "",
+    referral: payload.referral || "",
+    message: payload.message || "",
+    source: payload.source || "Website contact form"
+  };
+
+  try {
+    const formspreeResponse = await fetch(formspreeEndpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formspreePayload)
+    });
+
+    if (!formspreeResponse.ok) {
+      const errorText = await formspreeResponse.text();
+      console.error("Formspree returned status " + formspreeResponse.status + ": " + errorText);
+      sendJson(response, 502, { error: "The message could not be sent. Please email Caitlin directly." });
+      return;
+    }
+
+    sendJson(response, 200, { ok: true });
+  } catch (error) {
+    console.error(error.message);
+    sendJson(response, 502, { error: "The message could not be sent. Please email Caitlin directly." });
+  }
+}
+
 async function serveFile(requestPath, response) {
   const requestedPage = requestPath === "/" ? "/index.html" : requestPath;
   const normalizedPath = path.normalize(decodeURIComponent(requestedPage)).replace(/^[/\\]+/, "");
@@ -114,7 +217,7 @@ async function serveFile(requestPath, response) {
     path.isAbsolute(relativePath) ||
     pathSegments.some(function (segment) { return segment.startsWith("."); }) ||
     !contentTypes[extension] ||
-    (extension === ".js" && relativePath !== "footer.js")
+    (extension === ".js" && !allowedScripts.has(relativePath))
   ) {
     response.writeHead(403);
     response.end("Forbidden");
@@ -161,6 +264,11 @@ const server = http.createServer(async function (request, response) {
       sendJson(response, 503, { error: "Instagram feed is temporarily unavailable." });
       return;
     }
+  }
+
+  if (url.pathname === "/api/contact") {
+    await submitContactForm(request, response);
+    return;
   }
 
   try {
