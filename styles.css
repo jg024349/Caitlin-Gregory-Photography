@@ -315,9 +315,6 @@ p {
 
 /* FORM STYLES */
 .contact-form {
-  max-width: 680px;
-  width: 100%;
-  margin: 0 auto;
   background: white;
   padding: clamp(30px, 5vw, 40px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -455,17 +452,17 @@ button:disabled {
 
 /* CREDENTIALS SECTION */
 .credentials-section {
-  padding: clamp(50px, 10vw, 80px) 6vw;
+  padding: clamp(50px, 9vw, 80px) 6vw;
   background: white;
   text-align: center;
 }
 
 .credentials-container {
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(30px, 8vw, 50px);
+  gap: clamp(40px, 8vw, 80px);
   align-items: center;
 }
 
@@ -477,10 +474,17 @@ button:disabled {
 }
 
 .credential-logo {
-  width: clamp(100px, 20vw, 150px);
+  width: 100%;
   height: auto;
-  margin-bottom: 15px;
   object-fit: contain;
+}
+
+.credential-logo-wide {
+  max-width: 360px;
+}
+
+.credential-logo-award {
+  max-width: 360px;
 }
 
 .credential-item p {
@@ -535,6 +539,41 @@ button:disabled {
 
 .contact-cta a:hover {
   color: #2d2925;
+}
+
+/* BOOKING SECTION */
+.booking-section {
+  padding: clamp(45px, 8vw, 75px) 6vw;
+  background: white;
+}
+
+.booking-section h2 {
+  max-width: 900px;
+  margin: 0 auto clamp(24px, 5vw, 36px);
+  text-align: center;
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.booking-container {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(320px, 1.05fr);
+  gap: clamp(30px, 6vw, 60px);
+  align-items: start;
+}
+
+.booking-image img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5.5;
+  object-fit: cover;
+}
+
+.booking-form-wrapper .contact-form {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 /* ABOUT PAGE */
@@ -1607,6 +1646,11 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 
+  .booking-container {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+  }
+
   .about-intro-section,
   .about-facts-section,
   .about-inquiry-section {
@@ -1642,6 +1686,11 @@ button:disabled {
   .credentials-container {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .credential-logo-wide,
+  .credential-logo-award {
+    max-width: 320px;
   }
 }
 
@@ -1860,8 +1909,17 @@ button:disabled {
     gap: 20px;
   }
 
+  .booking-section {
+    padding: 40px 3vw;
+  }
+
+  .booking-image img {
+    aspect-ratio: 4 / 4.8;
+  }
+
   .contact-intro h2 {
     font-size: clamp(18px, 5vw, 24px);
+    letter-spacing: 2.5px;
   }
 
   .contact-form {
