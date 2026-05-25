@@ -44,7 +44,7 @@
 
   <section class="season-gallery">
     <h2>Spring</h2>
-    <div class="season-carousel" data-season-carousel aria-label="Spring family gallery">
+    <div class="season-carousel" data-season-carousel data-gallery-folder="Family-Spring" data-gallery-prefix="Spring" data-gallery-count="12" data-gallery-season="Spring" aria-label="Spring family gallery">
       <button class="carousel-arrow carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous spring image"></button>
 
       <div class="carousel-track">
@@ -78,9 +78,22 @@
     </div>
 
     <h2>Summer</h2>
-    <div class="gallery-grid gallery-grid-wide">
-      <img src="family-summer-1.jpg" alt="Summer family portrait">
-      <img src="family-summer-2.jpg" alt="Summer family photography session">
+    <div class="season-carousel" data-season-carousel data-gallery-folder="Family-Summer" data-gallery-prefix="Summer" data-gallery-count="16" data-gallery-season="Summer" aria-label="Summer family gallery">
+      <button class="carousel-arrow carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous summer image"></button>
+
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="Family-Summer/Summer1.jpg" alt="Summer family gallery image 1" data-carousel-image="0" />
+        </div>
+        <div class="carousel-slide">
+          <img src="Family-Summer/Summer2.jpg" alt="Summer family gallery image 2" data-carousel-image="1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="Family-Summer/Summer3.jpg" alt="Summer family gallery image 3" data-carousel-image="2" />
+        </div>
+      </div>
+
+      <button class="carousel-arrow carousel-arrow-next" type="button" data-carousel-next aria-label="Next summer image"></button>
     </div>
 
     <h2>Autumn</h2>
@@ -120,35 +133,6 @@
       <a href="investment.html" class="outline-button">Investment Information</a>
     </div>
     <img src="family-investment.jpg" alt="Family session investment image">
-  </section>
-
-  <section class="contact-preview">
-    <h2>Ready to inquire?</h2>
-
-    <form>
-      <label>Full Name *</label>
-      <input type="text" placeholder="First & Last Name">
-
-      <label>Email Address *</label>
-      <input type="email" placeholder="abcd@gmail.com">
-
-      <label>Phone Number *</label>
-      <input type="tel" placeholder="Example: 336-651-0000">
-
-      <label>Session Type of Interest *</label>
-      <select>
-        <option>Select an option</option>
-        <option>Family</option>
-        <option>Senior Portrait</option>
-        <option>Maternity</option>
-        <option>Newborn</option>
-      </select>
-
-      <label>Month or Date of Interest</label>
-      <input type="text" placeholder="Example: January 2027">
-
-      <button type="button">Send</button>
-    </form>
   </section>
 
 </main>
