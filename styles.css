@@ -1640,25 +1640,48 @@ button:disabled {
 
 /* TESTIMONIAL FEATURE */
 .feature-testimonial {
+  width: min(1320px, calc(100% - clamp(30px, 8vw, 40px)));
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: clamp(20px, 8vw, 40px);
-  padding: clamp(50px, 10vw, 80px) clamp(20px, 4vw, 24px);
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.3fr);
+  gap: 0;
+  align-items: center;
+  padding: clamp(60px, 10vw, 90px) 0;
+  border-top: 1px solid rgba(45, 41, 37, 0.24);
+  border-bottom: 1px solid rgba(45, 41, 37, 0.24);
 }
 
 .testimonial-card {
-  background: #cdb3d1;
+  position: relative;
+  z-index: 1;
+  margin-right: clamp(-90px, -5vw, -50px);
+  background: var(--brand-blue);
   color: white;
-  padding: clamp(25px, 6vw, 40px);
+  padding: clamp(34px, 6vw, 58px);
 }
 
 .testimonial-card h2 {
-  margin-bottom: 15px;
+  margin-bottom: 24px;
+  font-style: italic;
+  color: white;
 }
 
 .testimonial-card p {
-  margin: 0 0 15px 0;
-  font-size: clamp(14px, 2vw, 16px);
+  margin: 0 0 22px 0;
+  font-size: clamp(15px, 1.8vw, 18px);
+}
+
+.testimonial-card .client {
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.feature-testimonial > img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* INVESTMENT PREVIEW SECTION */
@@ -1677,17 +1700,25 @@ button:disabled {
 }
 
 .family-booking {
-  padding: clamp(50px, 10vw, 80px) 6vw;
+  width: min(1320px, calc(100% - clamp(30px, 8vw, 40px)));
+  margin: 0 auto;
+  padding: clamp(65px, 11vw, 95px) 6vw clamp(50px, 10vw, 80px);
   text-align: center;
 }
 
 .family-booking h2 {
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+.family-booking .outline-button {
+  margin-top: 0;
+  margin-bottom: 22px;
 }
 
 .family-booking p {
   font-size: clamp(14px, 2vw, 16px);
   color: #666;
+  margin: 0;
 }
 
 /* RESPONSIVE - LARGE TABLETS & UP */
@@ -1716,6 +1747,11 @@ button:disabled {
 
   .feature-testimonial {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .testimonial-card {
+    margin-right: 0;
   }
 
   .investment-preview {

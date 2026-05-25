@@ -6,18 +6,18 @@
 
     if (!folder || !prefix || !count) {
       return [
-        "Family-Spring/Spring1.jpg",
-        "Family-Spring/Spring2.jpg",
-        "Family-Spring/Spring3.jpg",
-        "Family-Spring/Spring4.jpg",
-        "Family-Spring/Spring5.jpg",
-        "Family-Spring/Spring6.jpg",
-        "Family-Spring/Spring7.jpg",
-        "Family-Spring/Spring8.jpg",
-        "Family-Spring/Spring9.jpg",
-        "Family-Spring/Spring10.jpg",
-        "Family-Spring/Spring11.jpg",
-        "Family-Spring/Spring12.jpg"
+        "family-spring/Spring1.jpg",
+        "family-spring/Spring2.jpg",
+        "family-spring/Spring3.jpg",
+        "family-spring/Spring4.jpg",
+        "family-spring/Spring5.jpg",
+        "family-spring/Spring6.jpg",
+        "family-spring/Spring7.jpg",
+        "family-spring/Spring8.jpg",
+        "family-spring/Spring9.jpg",
+        "family-spring/Spring10.jpg",
+        "family-spring/Spring11.jpg",
+        "family-spring/Spring12.jpg"
       ];
     }
 
