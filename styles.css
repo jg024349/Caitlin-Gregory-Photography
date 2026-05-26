@@ -1790,6 +1790,16 @@ button:disabled {
   text-align: center;
 }
 
+.maternity-investment {
+  grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 0.95fr);
+  max-width: 1120px;
+}
+
+.maternity-investment .senior-investment-image img {
+  max-height: 460px;
+  object-fit: cover;
+}
+
 .senior-investment > div {
   align-items: center;
   display: flex;
