@@ -38,11 +38,12 @@ button {
 }
 
 .logo {
-  display: block;
-  margin-bottom: 12px;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+  left: 50%;
+  margin: 0;
+  max-width: clamp(210px, 20vw, 300px);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .logo img {
@@ -55,10 +56,19 @@ button {
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  font-size: 15px;
-  letter-spacing: 0.5px;
+  align-items: center;
+  gap: clamp(18px, 3vw, 46px);
+  flex-wrap: nowrap;
+  font-size: clamp(13px, 1.35vw, 18px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  min-height: 48px;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.main-nav > :nth-child(3) {
+  margin-right: clamp(210px, 24vw, 360px);
 }
 
 .main-nav a {
@@ -1404,6 +1414,17 @@ button:disabled {
   margin-bottom: clamp(45px, 8vw, 70px);
 }
 
+.senior-carousel-section {
+  width: min(1320px, calc(100% - clamp(30px, 8vw, 40px)));
+  margin: 0 auto;
+  padding: clamp(45px, 8vw, 70px) 0 clamp(36px, 7vw, 58px);
+  border-bottom: 1px solid rgba(45, 41, 37, 0.24);
+}
+
+.senior-carousel-section .season-carousel {
+  margin-bottom: 0;
+}
+
 .carousel-track {
   display: flex;
   justify-content: center;
@@ -1678,6 +1699,15 @@ button:disabled {
   margin-bottom: 0;
 }
 
+.testimonial-reverse {
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.8fr);
+}
+
+.testimonial-reverse .testimonial-card {
+  margin-left: clamp(-90px, -5vw, -50px);
+  margin-right: 0;
+}
+
 .feature-testimonial > img {
   width: 100%;
   height: auto;
@@ -1697,6 +1727,88 @@ button:disabled {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.family-investment-feature {
+  width: min(1320px, calc(100% - clamp(30px, 8vw, 40px)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(320px, 1fr);
+  gap: clamp(36px, 8vw, 90px);
+  align-items: center;
+  padding: clamp(60px, 10vw, 90px) 0;
+  border-bottom: 1px solid rgba(45, 41, 37, 0.24);
+}
+
+.family-investment-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 5vw, 46px);
+  text-align: center;
+}
+
+.family-investment-copy h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  font-style: italic;
+  font-weight: normal;
+}
+
+.family-investment-image {
+  display: block;
+}
+
+.family-investment-image img {
+  width: 100%;
+  display: block;
+}
+
+.senior-investment {
+  width: min(1320px, calc(100% - clamp(30px, 8vw, 40px)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(280px, 0.85fr);
+  gap: clamp(36px, 8vw, 90px);
+  align-items: center;
+  padding: clamp(60px, 10vw, 90px) 0;
+  border-bottom: 1px solid rgba(45, 41, 37, 0.24);
+}
+
+.senior-investment-image {
+  display: block;
+}
+
+.senior-investment-image img {
+  width: 100%;
+  display: block;
+}
+
+.senior-investment h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+}
+
+.senior-investment > div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.family-investment-feature .outline-button,
+.senior-investment .outline-button,
+.family-booking .outline-button {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+.family-investment-feature .outline-button:hover,
+.senior-investment .outline-button:hover,
+.family-booking .outline-button:hover {
+  background: var(--brand-blue);
+  color: white;
 }
 
 .family-booking {
@@ -1752,6 +1864,18 @@ button:disabled {
 
   .testimonial-card {
     margin-right: 0;
+  }
+
+  .testimonial-reverse .testimonial-card {
+    margin-left: 0;
+  }
+
+  .family-investment-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .senior-investment {
+    grid-template-columns: 1fr;
   }
 
   .investment-preview {
@@ -1824,6 +1948,12 @@ button:disabled {
   .main-nav {
     gap: 12px;
     font-size: 13px;
+    flex-wrap: wrap;
+    padding-top: 64px;
+  }
+
+  .main-nav > :nth-child(3) {
+    margin-right: 0;
   }
 
   .collection-card {
@@ -1899,6 +2029,10 @@ button:disabled {
     gap: 8px;
     font-size: 12px;
     letter-spacing: 0;
+  }
+
+  .main-nav > :nth-child(3) {
+    margin-right: 0;
   }
 
   .main-nav a {

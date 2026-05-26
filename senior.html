@@ -42,35 +42,44 @@
     <p>Celebrating milestones and showcasing your personality.</p>
   </section>
 
-  <section class="senior-showcase">
-    <div class="senior-grid">
-      <img src="senior-main-1.jpg" alt="Senior portrait session in Greensboro NC">
-      <img src="senior-main-2.jpg" alt="Senior portrait close-up">
-    </div>
+  <section class="senior-carousel-section">
+    <div class="season-carousel" data-season-carousel data-gallery-folder="senior-gallery" data-gallery-prefix="senior" data-gallery-count="20" data-gallery-season="Senior" aria-label="Senior portrait gallery">
+      <button class="carousel-arrow carousel-arrow-prev" type="button" data-carousel-prev aria-label="Previous senior image"></button>
 
-    <div class="senior-message">
-      <p>Celebrate the closing of one chapter and the beginning of the next.</p>
-      <p>Book your senior session today. It’s never too late.</p>
-      <a href="contact.html" class="outline-button">Let’s Talk About Your Senior Session Dreams</a>
-      <p class="note">You will hear back from me within 24 hours.</p>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="senior-gallery/senior1.jpg" alt="Senior portrait gallery image 1" data-carousel-image="0" />
+        </div>
+        <div class="carousel-slide">
+          <img src="senior-gallery/senior2.jpg" alt="Senior portrait gallery image 2" data-carousel-image="1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="senior-gallery/senior3.jpg" alt="Senior portrait gallery image 3" data-carousel-image="2" />
+        </div>
+      </div>
+
+      <button class="carousel-arrow carousel-arrow-next" type="button" data-carousel-next aria-label="Next senior image"></button>
     </div>
   </section>
 
-  <section class="feature-testimonial">
+  <section class="senior-testimonial feature-testimonial">
     <div class="testimonial-card">
-      <h2>“She made us feel at ease...”</h2>
+      <h2>"She made us feel at ease..."</h2>
       <p>
-        Caitlin was very easy to work with. She made us all feel at ease as we were completing our session.
-        I would highly recommend Caitlin to anyone for their pictures.
+        Caitlin was very easy to work with! She made us all feel at ease as we were completing our session. I would highly recommend Caitlin to anyone for their pictures!
       </p>
-      <p class="client">The Gillespie Family · Clinton, NC</p>
+      <p>
+        Caitlin Gregory Photography is "da bomb". Evan's pictures are amazing!
+      </p>
+      <p class="client">The Gillespie Family - Clinton, NC</p>
     </div>
 
-    <img src="senior-testimonial.jpg" alt="Senior portrait testimonial image">
+    <img src="senior-gallery/testimonal_senior.jpg" alt="Senior portrait testimonial image">
   </section>
-
   <section class="senior-investment">
-    <img src="senior-investment.jpg" alt="Senior portrait investment image">
+    <a href="investment.html" class="senior-investment-image" aria-label="View senior portrait investment information">
+      <img src="senior-gallery/investment_senior.jpg" alt="Senior portrait investment image">
+    </a>
 
     <div>
       <h2>What is the investment like for senior portraits?</h2>
@@ -79,13 +88,16 @@
   </section>
 
   <section class="family-booking">
-    <a href="contact.html" class="outline-button">Inquire Here for Senior Portraits</a>
+    <h2>Let's capture your senior year</h2>
+    <a href="contact.html" class="outline-button">Begin Your Senior Portrait Experience Here</a>
+    <p>You will hear back from me within 24 hours.</p>
   </section>
 
 </main>
 
 <div data-site-footer></div>
 <script src="footer.js"></script>
+<script src="family-gallery.js"></script>
 
 </body>
 </html>
