@@ -1516,6 +1516,51 @@ button:disabled {
   color: #666;
 }
 
+.home-location {
+  width: min(1320px, calc(100% - clamp(30px, 8vw, 40px)));
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(45, 41, 37, 0.24);
+}
+
+.home-testimonial-feature {
+  width: min(1120px, calc(100% - clamp(30px, 8vw, 40px)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.95fr) minmax(300px, 1fr);
+  gap: clamp(32px, 7vw, 72px);
+  align-items: center;
+  padding: clamp(55px, 10vw, 90px) 0;
+}
+
+.home-testimonial-image img {
+  width: 100%;
+  display: block;
+}
+
+.home-testimonial-copy {
+  text-align: center;
+}
+
+.home-testimonial-copy .quote {
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.4;
+}
+
+.home-testimonial-copy .client {
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.cta .button {
+  background: transparent;
+  border: 2px solid var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+.cta .button:hover {
+  background: var(--brand-blue);
+  color: white;
+}
+
 .services {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1800,6 +1845,20 @@ button:disabled {
   object-fit: cover;
 }
 
+.newborn-investment {
+  grid-template-columns: minmax(300px, 0.9fr) minmax(300px, 0.9fr);
+  max-width: 1120px;
+}
+
+.newborn-investment .senior-investment-image img {
+  max-height: 430px;
+  object-fit: cover;
+}
+
+.newborn-investment p:not(.eyebrow) {
+  max-width: 560px;
+}
+
 .senior-investment > div {
   align-items: center;
   display: flex;
@@ -1889,6 +1948,10 @@ button:disabled {
   }
 
   .investment-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .home-testimonial-feature {
     grid-template-columns: 1fr;
   }
 
