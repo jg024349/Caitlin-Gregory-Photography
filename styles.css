@@ -2382,6 +2382,10 @@ button:disabled {
     z-index: 230;
   }
 
+  .home-page .logo img {
+    filter: brightness(0) invert(1);
+  }
+
   .home-page .mobile-nav-toggle {
     align-items: center;
     background: transparent;
