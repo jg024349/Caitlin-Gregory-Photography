@@ -211,13 +211,14 @@ async function serveFile(requestPath, response) {
   const relativePath = path.relative(rootDirectory, filePath);
   const pathSegments = relativePath.split(path.sep);
   const extension = path.extname(filePath).toLowerCase();
+  const scriptName = path.basename(relativePath);
 
   if (
     relativePath.startsWith("..") ||
     path.isAbsolute(relativePath) ||
     pathSegments.some(function (segment) { return segment.startsWith("."); }) ||
     !contentTypes[extension] ||
-    (extension === ".js" && !allowedScripts.has(relativePath))
+    (extension === ".js" && !allowedScripts.has(scriptName))
   ) {
     response.writeHead(403);
     response.end("Forbidden");
