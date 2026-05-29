@@ -34,7 +34,6 @@
     var dots = Array.prototype.slice.call(carousel.querySelectorAll("[data-carousel-dot]"));
     var currentIndex = 0;
     var imageRatios = {};
-    var frameRatio = 3.72;
 
     if (!track || !carouselImages.length) {
       return;
@@ -54,6 +53,8 @@
         return;
       }
 
+      var isPhone = window.matchMedia("(max-width: 600px)").matches;
+      var isTablet = window.matchMedia("(max-width: 768px)").matches;
       var ratios = activeImages.map(function (image) {
         if (!image.naturalWidth || !image.naturalHeight) {
           return 1;
@@ -64,13 +65,25 @@
       var totalRatio = ratios.reduce(function (total, ratio) {
         return total + ratio;
       }, 0);
+      var frameRatio = isPhone ? ratios[0] : isTablet ? 1.85 : 3.72;
       var rowHeight = carouselWidth / frameRatio;
+
+      if (isPhone) {
+        rowHeight = Math.max(260, Math.min(rowHeight, 620));
+      }
 
       track.style.height = rowHeight + "px";
 
       carouselImages.forEach(function (image) {
         image.closest(".carousel-slide").style.flexBasis = "";
       });
+
+      if (isPhone) {
+        activeImages.forEach(function (image) {
+          image.closest(".carousel-slide").style.flexBasis = carouselWidth + "px";
+        });
+        return;
+      }
 
       activeImages.forEach(function (image, index) {
         image.closest(".carousel-slide").style.flexBasis = carouselWidth * (ratios[index] / totalRatio) + "px";

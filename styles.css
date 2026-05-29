@@ -2295,6 +2295,47 @@ button:disabled {
     display: none;
   }
 
+  .season-carousel {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+  }
+
+  .season-gallery,
+  .senior-carousel-section {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel-track {
+    background: #f7f2ec;
+  }
+
+  .carousel-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-slide img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .carousel-arrow {
+    background: rgba(255, 255, 255, 0.26);
+  }
+
+  .carousel-arrow-prev {
+    left: 12px;
+  }
+
+  .carousel-arrow-next {
+    right: 12px;
+  }
+
   .about-hero {
     padding: 45px 3vw 35px;
   }
