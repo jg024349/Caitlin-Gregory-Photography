@@ -29,8 +29,9 @@
     '      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 3.8h9.2a3.6 3.6 0 0 1 3.6 3.6v9.2a3.6 3.6 0 0 1-3.6 3.6H7.4a3.6 3.6 0 0 1-3.6-3.6V7.4a3.6 3.6 0 0 1 3.6-3.6Zm0 2A1.6 1.6 0 0 0 5.8 7.4v9.2c0 .9.7 1.6 1.6 1.6h9.2c.9 0 1.6-.7 1.6-1.6V7.4c0-.9-.7-1.6-1.6-1.6H7.4Zm9.6 1.5a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>',
     '    </a>',
     '  </div>',
-    '  <p class="footer-brand">Caitlin Gregory</p>',
-    '  <p class="footer-subtitle">Photography</p>',
+    '  <a href="index.html" class="footer-logo" aria-label="Caitlin Gregory Photography home">',
+    '    <img src="CAITLIN GREGORY_WhiteLogo.png" alt="Caitlin Gregory Photography">',
+    '  </a>',
     '  <p class="footer-info"><a href="mailto:caitlin.gregory@caitlingregoryphotography.com">caitlin.gregory@caitlingregoryphotography.com</a> | Caitlin Gregory Photography, L.L.C. <span data-footer-year></span></p>',
     '  <div class="footer-instagram" data-instagram-feed aria-label="Latest Instagram posts"></div>',
     '</footer>'
