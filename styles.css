@@ -50,6 +50,7 @@ button {
   width: 100%;
   height: auto;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
 /* NAV */
@@ -64,7 +65,7 @@ button {
   letter-spacing: 1px;
   min-height: 48px;
   text-transform: uppercase;
-  color: #111;
+  color: white;
 }
 
 .main-nav > :nth-child(3) {
@@ -78,7 +79,7 @@ button {
 }
 
 .main-nav a:hover {
-  color: #9b765f;
+  color: rgba(255, 255, 255, 0.78);
 }
 
 /* DROPDOWN */
@@ -2352,41 +2353,38 @@ button:disabled {
   }
 }
 
-/* MOBILE HOME HEADER */
+/* MOBILE HEADER */
 .mobile-nav-toggle {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .home-page .site-header {
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  .site-header {
     align-items: center;
-    background: transparent;
+    background: var(--brand-blue);
     display: flex;
-    height: 112px;
+    height: 170px;
     justify-content: center;
-    left: 0;
     padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: sticky;
     z-index: 200;
   }
 
-  .home-page .logo {
+  .logo {
     left: 50%;
     margin: 0;
     max-width: min(58vw, 300px);
     position: absolute;
-    top: 54px;
+    top: 86px;
     transform: translateX(-50%);
     z-index: 230;
   }
 
-  .home-page .logo img {
-    filter: brightness(0) invert(1);
-  }
-
-  .home-page .mobile-nav-toggle {
+  .mobile-nav-toggle {
     align-items: center;
     background: transparent;
     border: 0;
@@ -2398,12 +2396,12 @@ button:disabled {
     left: 22px;
     padding: 0;
     position: absolute;
-    top: 42px;
+    top: 72px;
     width: 52px;
     z-index: 260;
   }
 
-  .home-page .mobile-nav-toggle span {
+  .mobile-nav-toggle span {
     background: white;
     display: block;
     height: 3px;
@@ -2411,19 +2409,19 @@ button:disabled {
     width: 31px;
   }
 
-  .home-page .mobile-nav-toggle.is-open span:nth-child(1) {
+  .mobile-nav-toggle.is-open span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
 
-  .home-page .mobile-nav-toggle.is-open span:nth-child(2) {
+  .mobile-nav-toggle.is-open span:nth-child(2) {
     opacity: 0;
   }
 
-  .home-page .mobile-nav-toggle.is-open span:nth-child(3) {
+  .mobile-nav-toggle.is-open span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
 
-  .home-page .main-nav {
+  .main-nav {
     align-content: center;
     align-items: center;
     background: rgba(184, 198, 220, 0.94);
@@ -2431,14 +2429,14 @@ button:disabled {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    font-size: clamp(34px, 9vw, 48px);
-    gap: 26px;
+    font-size: clamp(31px, 8.5vw, 46px);
+    gap: 24px;
     inset: 0;
     justify-content: center;
     letter-spacing: 4px;
     min-height: 100vh;
     opacity: 0;
-    padding: 130px 24px 70px;
+    padding: 128px 24px 62px;
     pointer-events: none;
     position: fixed;
     text-align: center;
@@ -2448,32 +2446,72 @@ button:disabled {
     z-index: 220;
   }
 
-  .home-page.mobile-menu-open .main-nav {
+  .mobile-menu-open .main-nav {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
     visibility: visible;
   }
 
-  .home-page .main-nav > :nth-child(3) {
+  .main-nav > :nth-child(3) {
     margin-right: 0;
   }
 
-  .home-page .main-nav a {
+  .main-nav a {
     color: white;
     padding: 0;
   }
 
-  .home-page .dropdown {
+  .dropdown {
     position: static;
   }
 
-  .home-page .dropdown-toggle::before {
+  .dropdown-toggle::before {
     content: "+";
   }
 
-  .home-page .dropdown-menu {
+  .dropdown-menu,
+  .dropdown:hover .dropdown-menu {
     display: none;
+  }
+
+  .dropdown.is-open .dropdown-menu {
+    background: transparent;
+    box-shadow: none;
+    display: grid;
+    gap: 13px;
+    left: auto;
+    min-width: 0;
+    padding: 14px 0 0;
+    position: static;
+  }
+
+  .dropdown.is-open .dropdown-toggle::before {
+    content: "-";
+  }
+
+  .dropdown-menu a {
+    color: white;
+    font-size: clamp(17px, 4.8vw, 22px);
+    letter-spacing: 2.4px;
+    padding: 0;
+  }
+
+  .home-page .site-header {
+    background: transparent;
+    height: 112px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .home-page .logo {
+    top: 54px;
+  }
+
+  .home-page .mobile-nav-toggle {
+    top: 42px;
   }
 
   .home-page .hero {
