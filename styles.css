@@ -820,14 +820,25 @@ button:disabled {
 }
 
 .about-cta {
+  background: #f7f2ec;
+  border-bottom: 1px solid rgba(45, 41, 37, 0.18);
+  border-top: 1px solid rgba(45, 41, 37, 0.18);
+  color: #2d2925;
   padding: clamp(55px, 10vw, 90px) 6vw;
   text-align: center;
-  background: linear-gradient(135deg, #2d2925 0%, #3f3933 100%);
-  color: white;
 }
 
 .about-cta h2 {
+  color: #2d2925;
+}
+
+.about-cta .button {
+  background: var(--brand-blue);
   color: white;
+}
+
+.about-cta .button:hover {
+  background: #a9b9d1;
 }
 
 /* TESTIMONIALS PAGE */
