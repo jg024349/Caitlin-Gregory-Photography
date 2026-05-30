@@ -2437,8 +2437,28 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 
+  .testimonial-feature-row,
+  .testimonial-feature-row-split,
+  .testimonial-feature-row-final {
+    gap: clamp(24px, 8vw, 38px);
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    max-width: 100%;
+    transform: none;
+    width: 100%;
+  }
+
   .testimonial-story img {
     aspect-ratio: 4 / 3.8;
+  }
+
+  .testimonial-feature-row img,
+  .testimonial-feature-row-split img,
+  .testimonial-feature-row-final img {
+    aspect-ratio: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .testimonial-cta .outline-button {
@@ -2450,6 +2470,50 @@ button:disabled {
 /* MOBILE HEADER */
 .mobile-nav-toggle {
   display: none;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .testimonial-story-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .testimonial-feature-row,
+  .testimonial-feature-row-split,
+  .testimonial-feature-row-final {
+    display: grid;
+    gap: clamp(24px, 8vw, 38px);
+    grid-template-columns: minmax(0, 1fr) !important;
+    margin-left: 0;
+    max-width: 100%;
+    min-width: 0;
+    transform: none;
+    width: 100%;
+  }
+
+  .testimonial-feature-row > *,
+  .testimonial-feature-row-split > *,
+  .testimonial-feature-row-final > * {
+    min-width: 0;
+  }
+
+  .testimonial-feature-row img,
+  .testimonial-feature-row-split img,
+  .testimonial-feature-row-final img {
+    aspect-ratio: auto;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2629,5 +2693,40 @@ button:disabled {
 
   .home-page .home-location {
     padding-top: clamp(54px, 14vw, 72px);
+  }
+}
+
+/* Keep testimonial blocks as a vertical story on mobile. */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .testimonial-story-grid,
+  .testimonial-story,
+  .testimonial-feature-row,
+  .testimonial-feature-row-split,
+  .testimonial-feature-row-final {
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .testimonial-feature-row,
+  .testimonial-feature-row-split,
+  .testimonial-feature-row-final {
+    grid-template-columns: minmax(0, 1fr) !important;
+    margin-left: 0;
+    transform: none;
+  }
+
+  .testimonial-feature-row > *,
+  .testimonial-feature-row-split > *,
+  .testimonial-feature-row-final > * {
+    max-width: 100%;
+    min-width: 0;
   }
 }
