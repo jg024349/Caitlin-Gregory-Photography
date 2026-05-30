@@ -456,6 +456,15 @@ p {
   color: #9b3f3f;
 }
 
+.honeybook-widget {
+  min-height: 520px;
+  width: 100%;
+}
+
+.honeybook-widget iframe {
+  max-width: 100%;
+}
+
 button:disabled {
   cursor: wait;
   opacity: 0.7;
