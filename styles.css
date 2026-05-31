@@ -3076,11 +3076,16 @@ button:disabled {
     width: 100%;
   }
 
+  .card-content .investment-note,
+  .card-content .investment-amount {
+    order: 3;
+  }
+
   .card-image {
     order: 2;
   }
 
   .card-content .button {
-    order: 3;
+    order: 4;
   }
 }
