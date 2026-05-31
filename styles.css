@@ -1951,6 +1951,178 @@ button:disabled {
   margin: 0;
 }
 
+/* ALL FOUR SEASONS PAGE */
+.four-seasons-hero,
+.four-seasons-copy-block,
+.four-seasons-idea,
+.four-seasons-growth,
+.four-seasons-included,
+.four-seasons-investment,
+.four-seasons-final {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(42px, 8vw, 68px) clamp(20px, 5vw, 38px);
+  text-align: center;
+}
+
+.four-seasons-hero {
+  padding-top: clamp(55px, 10vw, 88px);
+}
+
+.four-seasons-hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  text-transform: uppercase;
+}
+
+.four-seasons-hero > p:last-of-type {
+  max-width: 860px;
+  margin: 0 auto clamp(26px, 5vw, 40px);
+  font-size: clamp(18px, 2.8vw, 27px);
+  line-height: 1.35;
+}
+
+.four-seasons-thumb-grid,
+.four-seasons-memory-grid {
+  display: grid;
+  gap: clamp(10px, 2vw, 18px);
+}
+
+.four-seasons-thumb-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.four-seasons-thumb-grid img,
+.four-seasons-memory-grid img,
+.four-seasons-pair img,
+.four-seasons-investment img,
+.four-seasons-final img {
+  background: #efe6dc;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.four-seasons-thumb-grid img {
+  aspect-ratio: 4 / 3;
+}
+
+.four-seasons-copy-block,
+.four-seasons-idea,
+.four-seasons-growth,
+.four-seasons-included,
+.four-seasons-investment,
+.four-seasons-final {
+  border-top: 1px solid rgba(45, 41, 37, 0.2);
+}
+
+.four-seasons-copy-block p,
+.four-seasons-idea p,
+.four-seasons-included p,
+.four-seasons-investment p {
+  max-width: 930px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(14px, 1.7vw, 17px);
+  line-height: 1.85;
+}
+
+.four-seasons-pair {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 3vw, 28px);
+  margin-bottom: clamp(26px, 5vw, 42px);
+}
+
+.four-seasons-pair img {
+  aspect-ratio: 4 / 3.8;
+}
+
+.four-seasons-idea h2,
+.four-seasons-included h2,
+.four-seasons-investment h2 {
+  font-size: clamp(26px, 4vw, 42px);
+  letter-spacing: 3px;
+}
+
+.four-seasons-memory-grid {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: clamp(24px, 4vw, 34px);
+}
+
+.four-seasons-memory-grid img {
+  aspect-ratio: 1 / 1;
+}
+
+.four-seasons-growth > p {
+  margin-bottom: clamp(20px, 4vw, 30px);
+  font-size: clamp(14px, 1.8vw, 16px);
+}
+
+.four-seasons-growth .outline-button,
+.four-seasons-final .outline-button {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+  min-width: min(520px, 100%);
+}
+
+.four-seasons-growth .outline-button:hover,
+.four-seasons-final .outline-button:hover {
+  background: var(--brand-blue);
+  color: white;
+}
+
+.four-seasons-list {
+  display: grid;
+  gap: 12px;
+  margin: clamp(20px, 4vw, 30px) 0;
+}
+
+.four-seasons-list p {
+  margin-bottom: 0;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.four-seasons-list span {
+  display: inline-block;
+  margin-right: 8px;
+  width: 22px;
+}
+
+.four-seasons-investment {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1fr);
+  gap: clamp(28px, 6vw, 62px);
+  align-items: center;
+}
+
+.four-seasons-investment img {
+  aspect-ratio: 4 / 5.1;
+}
+
+.four-seasons-final h2 {
+  font-size: clamp(28px, 4.8vw, 46px);
+}
+
+.four-seasons-final h3 {
+  font-size: clamp(24px, 4vw, 40px);
+  margin-bottom: clamp(24px, 5vw, 38px);
+}
+
+.four-seasons-final img {
+  max-width: 900px;
+  margin: 0 auto clamp(24px, 5vw, 34px);
+  aspect-ratio: 16 / 10.6;
+}
+
+.four-seasons-final p {
+  font-size: clamp(22px, 3.6vw, 34px);
+  font-weight: bold;
+  letter-spacing: 4px;
+  line-height: 1.55;
+  margin-bottom: clamp(22px, 4vw, 34px);
+}
+
 /* RESPONSIVE - LARGE TABLETS & UP */
 @media (max-width: 1200px) {
   .included-grid {
@@ -1989,6 +2161,10 @@ button:disabled {
   }
 
   .family-investment-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .four-seasons-investment {
     grid-template-columns: 1fr;
   }
 
@@ -2473,6 +2649,36 @@ button:disabled {
   }
 
   .testimonial-cta .outline-button {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .four-seasons-hero,
+  .four-seasons-copy-block,
+  .four-seasons-idea,
+  .four-seasons-growth,
+  .four-seasons-included,
+  .four-seasons-investment,
+  .four-seasons-final {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+
+  .four-seasons-thumb-grid,
+  .four-seasons-memory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .four-seasons-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .four-seasons-final p {
+    letter-spacing: 2px;
+  }
+
+  .four-seasons-growth .outline-button,
+  .four-seasons-final .outline-button {
     min-width: 0;
     width: 100%;
   }
