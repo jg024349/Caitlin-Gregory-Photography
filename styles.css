@@ -2947,3 +2947,110 @@ button:disabled {
     min-width: 0;
   }
 }
+
+/* Investment page mobile cleanup */
+@media (max-width: 700px) {
+  .investment-hero,
+  .collections-section,
+  .investment-process,
+  .investment-included,
+  .investment-cta {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .collection-filter {
+    align-items: center;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    padding: 26px 5vw 10px;
+  }
+
+  .filter-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 46px;
+    padding: 10px 12px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .collection-card,
+  .collection-card:nth-child(even) {
+    gap: 22px;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    margin: 0 auto clamp(46px, 12vw, 70px);
+    max-width: 620px;
+    text-align: center;
+  }
+
+  .collection-card:nth-child(even) .card-image,
+  .collection-card:nth-child(even) .card-content {
+    order: unset;
+  }
+
+  .card-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card-content h3,
+  .collection-tagline,
+  .subcollection-note,
+  .investment-note,
+  .investment-amount {
+    text-align: center;
+  }
+
+  .features-list {
+    max-width: 420px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .card-content .button {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 340px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+  }
+
+  .card-image img {
+    margin: 0 auto;
+    max-height: 420px;
+    width: min(100%, 430px);
+  }
+
+  .process-steps,
+  .included-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .included-item {
+    text-align: center;
+  }
+
+  .investment-cta .button {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .collection-filter {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
