@@ -1107,8 +1107,9 @@ button:disabled {
 .collection-card .card-content {
   align-items: center;
   display: grid;
-  gap: clamp(30px, 8vw, 50px);
+  column-gap: clamp(30px, 8vw, 50px);
   grid-template-columns: minmax(280px, 1fr) minmax(300px, 1fr);
+  row-gap: 0;
 }
 
 .collection-card .card-content > :not(.card-image) {
@@ -1116,6 +1117,7 @@ button:disabled {
 }
 
 .collection-card .card-image {
+  align-self: center;
   grid-column: 2;
   grid-row: 1 / span 20;
 }
