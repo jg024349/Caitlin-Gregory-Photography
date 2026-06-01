@@ -774,7 +774,8 @@ button:disabled {
   margin-bottom: clamp(24px, 5vw, 36px);
 }
 
-.about-video-card img {
+.about-video-card img,
+.about-video-card video {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
