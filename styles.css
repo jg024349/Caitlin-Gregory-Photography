@@ -1099,9 +1099,15 @@ button:disabled {
 
 /* COLLECTION CARD */
 .collection-card {
+  border-bottom: 1px solid rgba(45, 41, 37, 0.2);
   display: block;
   margin-bottom: clamp(50px, 10vw, 80px);
+  padding-bottom: clamp(46px, 8vw, 72px);
   animation: fadeIn 0.5s ease-in;
+}
+
+.collection-card:last-child {
+  border-bottom: 0;
 }
 
 .collection-card .card-content {
