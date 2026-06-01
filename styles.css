@@ -1099,24 +1099,25 @@ button:disabled {
 
 /* COLLECTION CARD */
 .collection-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(30px, 8vw, 50px);
+  display: block;
   margin-bottom: clamp(50px, 10vw, 80px);
-  align-items: center;
   animation: fadeIn 0.5s ease-in;
 }
 
-.collection-card:nth-child(even) {
-  grid-template-columns: 1fr 1fr;
+.collection-card .card-content {
+  align-items: center;
+  display: grid;
+  gap: clamp(30px, 8vw, 50px);
+  grid-template-columns: minmax(280px, 1fr) minmax(300px, 1fr);
 }
 
-.collection-card:nth-child(even) .card-image {
-  order: 2;
+.collection-card .card-content > :not(.card-image) {
+  grid-column: 1;
 }
 
-.collection-card:nth-child(even) .card-content {
-  order: 1;
+.collection-card .card-image {
+  grid-column: 2;
+  grid-row: 1 / span 20;
 }
 
 .card-image {
@@ -2138,6 +2139,21 @@ button:disabled {
     gap: 30px;
   }
 
+  .collection-card .card-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .collection-card .card-content > :not(.card-image),
+  .collection-card .card-image {
+    grid-column: 1;
+  }
+
+  .collection-card .card-image {
+    grid-row: auto;
+  }
+
   .collection-card:nth-child(even) .card-image,
   .collection-card:nth-child(even) .card-content {
     order: unset;
@@ -3065,12 +3081,14 @@ button:disabled {
     border-bottom: 0;
   }
 
-  .card-content {
-    display: contents;
+  .collection-card .card-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .card-content > * {
-    justify-self: center;
+  .collection-card .card-content > * {
     max-width: 520px;
     order: 1;
     width: 100%;
