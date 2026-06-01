@@ -1122,6 +1122,12 @@ button:disabled {
   grid-row: 1 / span 20;
 }
 
+.collection-card .button {
+  justify-self: start;
+  max-width: max-content;
+  width: auto;
+}
+
 .card-image {
   display: flex;
   justify-content: center;
