@@ -3107,3 +3107,69 @@ button:disabled {
     order: 4;
   }
 }
+
+/* Final mobile investment ordering: bullets, image, price, button. */
+@media (max-width: 700px) {
+  .collection-card,
+  .collection-card:nth-child(even) {
+    display: block;
+    text-align: center;
+  }
+
+  .collection-card .card-content {
+    align-items: center;
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    grid-template-columns: none !important;
+    justify-items: center;
+  }
+
+  .collection-card .card-content > *,
+  .collection-card .card-content > :not(.card-image),
+  .collection-card .card-image,
+  .collection-card:nth-child(even) .card-image,
+  .collection-card:nth-child(even) .card-content {
+    grid-column: auto;
+    grid-row: auto;
+    order: initial;
+  }
+
+  .collection-card .card-content > * {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .collection-card .features-list {
+    margin-bottom: clamp(18px, 5vw, 26px);
+  }
+
+  .collection-card .card-image {
+    margin: 0 auto clamp(20px, 6vw, 30px);
+    max-width: 430px;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .collection-card .card-image img {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    max-width: 100%;
+    object-fit: contain !important;
+    width: 100% !important;
+  }
+
+  .collection-card .investment-note {
+    margin-top: 0;
+  }
+
+  .collection-card .investment-amount {
+    margin-top: 0;
+  }
+
+  .collection-card .button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
