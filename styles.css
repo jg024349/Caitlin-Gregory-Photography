@@ -3188,3 +3188,63 @@ button:disabled {
     margin-right: auto;
   }
 }
+
+/* Large desktop polish */
+@media (min-width: 1600px) {
+  .home-page .hero,
+  .home-page .services {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-page .hero {
+    padding-left: clamp(40px, 3vw, 64px);
+    padding-right: clamp(40px, 3vw, 64px);
+  }
+
+  .home-page .hero img {
+    height: clamp(560px, 34vw, 740px);
+    object-position: center 44%;
+  }
+
+  .home-page .hero-card {
+    bottom: clamp(50px, 8vh, 105px);
+    left: clamp(70px, 7vw, 140px);
+    max-width: clamp(360px, 22vw, 470px);
+    padding: clamp(26px, 2.2vw, 42px);
+  }
+
+  .home-page .hero-card h1 {
+    font-size: clamp(34px, 2.3vw, 48px);
+  }
+
+  .home-page .hero-card p:not(.eyebrow) {
+    font-size: clamp(16px, 1vw, 18px);
+  }
+
+  .home-location {
+    padding-top: clamp(70px, 6vw, 110px);
+    padding-bottom: clamp(60px, 5vw, 90px);
+  }
+
+  .home-testimonial-feature {
+    padding-top: clamp(55px, 5vw, 86px);
+    padding-bottom: clamp(55px, 5vw, 86px);
+  }
+
+  .service-card {
+    min-height: clamp(430px, 26vw, 560px);
+  }
+
+  .service-card-content {
+    padding: clamp(30px, 2.6vw, 48px);
+  }
+}
+
+@media (min-width: 1900px) {
+  .home-page .hero,
+  .home-page .services {
+    max-width: 1720px;
+  }
+}

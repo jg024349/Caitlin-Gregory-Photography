@@ -205,7 +205,7 @@ async function submitContactForm(request, response) {
   }
 }
 
-async function serveFile(requestPath, response) {
+async function serveFile(request, requestPath, response) {
   const requestedPage = requestPath === "/" ? "/index.html" : requestPath;
   const normalizedPath = path.normalize(decodeURIComponent(requestedPage)).replace(/^[/\\]+/, "");
   const filePath = path.join(rootDirectory, normalizedPath);
@@ -227,6 +227,44 @@ async function serveFile(requestPath, response) {
   }
 
   try {
+    if (extension === ".mp4") {
+      const stats = await fs.stat(filePath);
+      const range = request.headers.range;
+
+      if (range) {
+        const match = range.match(/^bytes=(\d*)-(\d*)$/);
+        const start = match && match[1] ? Number(match[1]) : 0;
+        const end = match && match[2] ? Math.min(Number(match[2]), stats.size - 1) : stats.size - 1;
+
+        if (!match || start > end || start >= stats.size) {
+          response.writeHead(416, {
+            "Content-Range": "bytes */" + stats.size
+          });
+          response.end();
+          return;
+        }
+
+        response.writeHead(206, {
+          "Accept-Ranges": "bytes",
+          "Cache-Control": "public, max-age=3600",
+          "Content-Length": end - start + 1,
+          "Content-Range": "bytes " + start + "-" + end + "/" + stats.size,
+          "Content-Type": contentTypes[extension]
+        });
+        fsSync.createReadStream(filePath, { start, end }).pipe(response);
+        return;
+      }
+
+      response.writeHead(200, {
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=3600",
+        "Content-Length": stats.size,
+        "Content-Type": contentTypes[extension]
+      });
+      fsSync.createReadStream(filePath).pipe(response);
+      return;
+    }
+
     const contents = await fs.readFile(filePath);
     const contentType = contentTypes[extension];
     response.writeHead(200, {
@@ -274,7 +312,7 @@ const server = http.createServer(async function (request, response) {
   }
 
   try {
-    await serveFile(url.pathname, response);
+    await serveFile(request, url.pathname, response);
   } catch (error) {
     console.error(error.message);
     sendJson(response, 500, { error: "The website could not load this resource." });
