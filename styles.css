@@ -1766,7 +1766,7 @@ button:disabled {
   inset: clamp(30px, 6vw, 60px) clamp(15px, 5vw, 5vw);
   opacity: 0;
   position: absolute;
-  transform: scale(1.035);
+  transform: scale(1.015);
 }
 
 .hero-slide-one {
@@ -1797,7 +1797,7 @@ button:disabled {
   28%,
   92% {
     opacity: 0;
-    transform: scale(1.035);
+    transform: scale(1.015);
   }
 }
 
