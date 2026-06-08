@@ -1761,12 +1761,22 @@ button:disabled {
   display: block;
 }
 
+.home-page .hero {
+  background: #f7f2ec;
+}
+
+.home-page .hero img {
+  background: #f7f2ec;
+  object-fit: contain;
+  object-position: center;
+}
+
 .hero-slide {
   animation: heroFade 28s infinite;
   inset: clamp(30px, 6vw, 60px) clamp(15px, 5vw, 5vw);
   opacity: 0;
   position: absolute;
-  transform: scale(1.015);
+  transform: none;
 }
 
 .hero-slide-one {
@@ -1791,13 +1801,13 @@ button:disabled {
   20%,
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
   }
 
   28%,
   92% {
     opacity: 0;
-    transform: scale(1.015);
+    transform: none;
   }
 }
 
