@@ -1591,7 +1591,7 @@ button:disabled {
 
 .home-location-services {
   max-width: 900px;
-  margin: clamp(18px, 3vw, 26px) auto 0;
+  margin: clamp(18px, 3vw, 26px) auto clamp(24px, 4vw, 36px);
   font-size: clamp(18px, 2.2vw, 24px);
   line-height: 1.7;
 }
@@ -1751,6 +1751,7 @@ button:disabled {
 .hero {
   position: relative;
   padding: clamp(30px, 6vw, 60px) clamp(15px, 5vw, 5vw);
+  overflow: hidden;
 }
 
 .hero img {
@@ -1758,6 +1759,57 @@ button:disabled {
   height: clamp(300px, 80vw, 650px);
   object-fit: cover;
   display: block;
+}
+
+.hero-slide {
+  animation: heroFade 28s infinite;
+  inset: clamp(30px, 6vw, 60px) clamp(15px, 5vw, 5vw);
+  opacity: 0;
+  position: absolute;
+  transform: scale(1.035);
+}
+
+.hero-slide-one {
+  inset: auto;
+  position: relative;
+}
+
+.hero-slide-two {
+  animation-delay: 7s;
+}
+
+.hero-slide-three {
+  animation-delay: 14s;
+}
+
+.hero-slide-four {
+  animation-delay: 21s;
+}
+
+@keyframes heroFade {
+  0%,
+  20%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  28%,
+  92% {
+    opacity: 0;
+    transform: scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    animation: none;
+    opacity: 0;
+  }
+
+  .hero-slide-one {
+    opacity: 1;
+  }
 }
 
 .hero-card {
@@ -2942,6 +2994,10 @@ button:disabled {
     object-fit: cover;
     object-position: 50% 42%;
     width: 100%;
+  }
+
+  .home-page .hero-slide {
+    inset: 0;
   }
 
   .home-page .hero-card {
