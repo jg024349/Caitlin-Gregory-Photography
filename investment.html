@@ -54,10 +54,10 @@
 
   <!-- COLLECTION FILTER -->
   <div class="collection-filter">
-    <button class="filter-btn active" onclick="filterCollections('all')">All Collections</button>
-    <button class="filter-btn" onclick="filterCollections('family')">Family</button>
-    <button class="filter-btn" onclick="filterCollections('maternity')">Maternity & Baby</button>
-    <button class="filter-btn" onclick="filterCollections('senior')">Senior</button>
+    <button class="filter-btn active" onclick="filterCollections('all', this)">All Collections</button>
+    <button class="filter-btn" onclick="filterCollections('family', this)">Family</button>
+    <button class="filter-btn" onclick="filterCollections('maternity', this)">Maternity & Baby</button>
+    <button class="filter-btn" onclick="filterCollections('senior', this)">Senior</button>
   </div>
 
   <!-- COLLECTIONS -->
@@ -390,7 +390,7 @@
 <script src="mobile-nav.js?v=20260529-mobile3"></script>
 
 <script>
-  function filterCollections(type) {
+  function filterCollections(type, activeButton) {
     // Hide all collections
     document.querySelectorAll('.collection-type').forEach(el => {
       el.style.display = 'none';
@@ -407,12 +407,22 @@
         el.style.display = 'block';
       });
     } else {
-      document.getElementById(type).style.display = 'block';
+      const selectedCollection = document.getElementById(type);
+
+      if (selectedCollection) {
+        selectedCollection.style.display = 'block';
+      }
     }
 
     // Add active class to clicked button
-    event.target.classList.add('active');
+    if (activeButton) {
+      activeButton.classList.add('active');
+    }
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    filterCollections('all', document.querySelector('.filter-btn'));
+  });
 </script>
 
 </body>
