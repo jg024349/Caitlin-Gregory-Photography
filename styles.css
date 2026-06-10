@@ -2968,8 +2968,8 @@ button:disabled {
     border-bottom: 1px solid rgba(45, 41, 37, 0.24);
     margin: 0 auto;
     max-width: 100%;
-    min-height: 0;
-    padding: 112px 0 clamp(24px, 7vw, 36px);
+    min-height: 100svh;
+    padding: 0 0 clamp(24px, 7vw, 36px);
   }
 
   .home-page .hero img {
@@ -2981,9 +2981,10 @@ button:disabled {
   }
 
   .home-page .hero-static img {
-    height: auto;
-    min-height: 0;
-    object-fit: contain;
+    height: 100svh;
+    min-height: 620px;
+    object-fit: cover;
+    object-position: center top;
     width: 100%;
   }
 
@@ -3317,6 +3318,13 @@ body.home-page .hero.hero-static img {
 @media (max-width: 900px) {
   body.home-page .hero.hero-static {
     max-width: 100%;
-    padding-top: 112px;
+    padding-top: 0;
+  }
+
+  body.home-page .hero.hero-static img {
+    height: 100svh;
+    min-height: 620px;
+    object-fit: cover;
+    object-position: center top;
   }
 }
