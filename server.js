@@ -48,7 +48,9 @@ const contentTypes = {
   ".json": "application/json; charset=utf-8",
   ".mp4": "video/mp4",
   ".png": "image/png",
-  ".svg": "image/svg+xml"
+  ".svg": "image/svg+xml",
+  ".txt": "text/plain; charset=utf-8",
+  ".xml": "application/xml; charset=utf-8"
 };
 
 const allowedScripts = new Set(["footer.js", "contact-form.js", "family-gallery.js", "mobile-nav.js"]);
