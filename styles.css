@@ -1773,60 +1773,19 @@ button:disabled {
   object-position: center;
 }
 
-.hero-slide {
-  animation: heroFade 28s infinite;
-  inset-block: clamp(30px, 6vw, 60px);
-  left: 50%;
-  max-width: calc(100% - clamp(30px, 10vw, 10vw));
-  opacity: 0;
-  position: absolute;
-  right: auto;
-  transform: none;
-  translate: -50% 0;
+.home-page .hero-static {
+  background: #f7f2ec;
+  border-bottom: 1px solid rgba(45, 41, 37, 0.24);
+  margin: clamp(36px, 4.5vw, 58px) auto 0;
+  max-width: min(1480px, calc(100% - clamp(42px, 8vw, 96px)));
+  padding: 0 0 clamp(38px, 5vw, 62px);
 }
 
-.hero-slide-one {
-  inset: auto;
-  position: relative;
-  translate: none;
-}
-
-.hero-slide-two {
-  animation-delay: 7s;
-}
-
-.hero-slide-three {
-  animation-delay: 14s;
-}
-
-.hero-slide-four {
-  animation-delay: 21s;
-}
-
-@keyframes heroFade {
-  0%,
-  20%,
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-
-  28%,
-  92% {
-    opacity: 0;
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-slide {
-    animation: none;
-    opacity: 0;
-  }
-
-  .hero-slide-one {
-    opacity: 1;
-  }
+.home-page .hero-static img {
+  height: auto;
+  max-height: min(76vh, 760px);
+  object-fit: contain;
+  width: 100%;
 }
 
 .hero-card {
@@ -3005,6 +2964,14 @@ button:disabled {
     padding: 0;
   }
 
+  .home-page .hero-static {
+    border-bottom: 1px solid rgba(45, 41, 37, 0.24);
+    margin: 0 auto;
+    max-width: 100%;
+    min-height: 0;
+    padding: 112px 0 clamp(24px, 7vw, 36px);
+  }
+
   .home-page .hero img {
     height: 100svh;
     min-height: 720px;
@@ -3013,12 +2980,11 @@ button:disabled {
     width: 100%;
   }
 
-  .home-page .hero-slide {
-    inset: 0;
-    left: 0;
-    max-width: none;
-    right: 0;
-    translate: none;
+  .home-page .hero-static img {
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    width: 100%;
   }
 
   .home-page .hero-card {
@@ -3332,5 +3298,25 @@ button:disabled {
   .home-page .hero,
   .home-page .services {
     max-width: 1720px;
+  }
+}
+
+body.home-page .hero.hero-static {
+  max-width: min(1480px, calc(100% - clamp(42px, 8vw, 96px)));
+}
+
+body.home-page .hero.hero-static img {
+  height: auto;
+  max-height: min(76vh, 760px);
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  body.home-page .hero.hero-static {
+    max-width: 100%;
+    padding-top: 112px;
   }
 }
