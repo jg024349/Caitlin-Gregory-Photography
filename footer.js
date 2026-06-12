@@ -26,7 +26,7 @@
     '      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.1 8.3a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM4.5 20h3.2V10H4.5v10Zm5.3 0H13v-5.7c0-1.5.3-2.5 1.9-2.5 1.5 0 1.5 1.4 1.5 2.6V20h3.2v-6.3c0-3.1-.7-5.4-4.2-5.4-1.7 0-2.8.9-3.3 1.8h-.1V10H9.8v10Z"/></svg>',
     '    </a>',
     '    <a href="' + instagramUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Instagram">',
-    '      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 3.8h9.2a3.6 3.6 0 0 1 3.6 3.6v9.2a3.6 3.6 0 0 1-3.6 3.6H7.4a3.6 3.6 0 0 1-3.6-3.6V7.4a3.6 3.6 0 0 1 3.6-3.6Zm0 2A1.6 1.6 0 0 0 5.8 7.4v9.2c0 .9.7 1.6 1.6 1.6h9.2c.9 0 1.6-.7 1.6-1.6V7.4c0-.9-.7-1.6-1.6-1.6H7.4Zm9.6 1.5a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>',
+    '      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 3.8h9.2a3.6 3.6 0 0 1 3.6 3.6v9.2a3.6 3.6 0 0 1-3.6 3.6H7.4a3.6 3.6 0 0 1-3.6-3.6V7.4a3.6 3.6 0 0 1 3.6-3.6Zm0 2A1.6 1.6 0 0 0 5.8 7.4v9.2a1.6 1.6 0 0 0 1.6 1.6h9.2a1.6 1.6 0 0 0 1.6-1.6V7.4a1.6 1.6 0 0 0-1.6-1.6H7.4Zm4.6 1a3.6 3.6 0 1 1 0 7.2 3.6 3.6 0 0 1 0-7.2Zm0 2a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Zm3-3a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6Z"/></svg>',
     '    </a>',
     '  </div>',
     '  <a href="index.html" class="footer-logo" aria-label="Caitlin Gregory Photography home">',
@@ -81,7 +81,7 @@
         return post.imageUrl && post.postUrl;
       });
 
-      if (posts.length === 6) {
+      if (posts.length > 0) {
         renderPosts(posts);
       }
     })
